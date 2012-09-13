@@ -1,12 +1,17 @@
-var vows = require('vows'),
-		assert = require('assert')
+var vows = require('vows')
+	,	assert = require('assert')
+	,	i18n = require('../index')({ dir: './test/fixtures'}).load()
 
 vows.describe('Translate constants').addBatch({
-  'when saying hello in French': {
-    topic: function() { this.callback(null, 'Bonjour') },
+  'when saying hello': {
+    topic: 'hello',
 
-    'we get Bonjour': function (topic) {
-      assert.equal(topic, 'Bonjour')
+    'in English, we get Hello': function(topic) {
+      assert.equal(i18n.setLocale('en').t('hello'), 'Hello')
+    },
+
+    'in French, we get Bonjour': function(topic) {
+      assert.equal(i18n.setLocale('fr').t('hello'), 'Bonjour')
     }
   }
 }).export(module)
