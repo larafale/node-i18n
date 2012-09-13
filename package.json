@@ -1,11 +1,17 @@
 {
-    "name": "node-i18n",
-    "description": "i18n for node",
-    "main": "./index",
-    "author": "Larafale & Gui",
-    "version": "0.0.1",
-    "repository": {
-        "type": "git",
-        "url": "http://github.com/larafale/node-i18n.git"
-    }
+  "name": "node-i18n",
+  "description": "i18n for node",
+  "main": "./index",
+  "author": "Larafale & Gui",
+  "version": "0.0.1",
+  "repository": {
+      "type": "git",
+      "url": "http://github.com/larafale/node-i18n.git"
+  },
+  "devDependencies": {
+    "vows": ">=0.6.4"
+  },
+  "scripts": {
+    "test": "vows test/*.js --spec"
+  }
 }
