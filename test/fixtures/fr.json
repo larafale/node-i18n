@@ -1,5 +1,8 @@
 {
 	"fr": {
-		"hello": "Bonjour"
+		"greeting": "Bonjour",
+		"evening": {
+			"greeting": "Bonsoir"
+		}
 	}
 }
