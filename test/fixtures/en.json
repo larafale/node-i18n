@@ -1,6 +1,7 @@
 {
 	"en": {
 		"greeting": "Hello",
+		"greetingTwoPeople": "Hello {{person1}} and {{person2}}",
 		"evening": {
 			"greeting": "Good evening"
 		}

@@ -1,6 +1,7 @@
 {
 	"fr": {
 		"greeting": "Bonjour",
+		"greetingTwoPeople": "Bonjour {{person1}} et {{person2}}",
 		"evening": {
 			"greeting": "Bonsoir"
 		}
