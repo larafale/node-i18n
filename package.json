@@ -3,7 +3,7 @@
   "description": "i18n for node",
   "main": "./index",
   "author": "Larafale & Gui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
       "type": "git",
       "url": "http://github.com/larafale/node-i18n.git"
