@@ -59,7 +59,7 @@ As `en` is set to be the default, when making a request to `/en/products` you wi
 
 #### Translation files
 Every translation file is JSON and must end with .json  
-You can have as many file you want for each locale. This let you seperate content.  
+You can have as many files as you want for each locale. This let you seperate content.  
 For example : `en.json` `header_en.json` `footer_en.json`  
 <br/>
 Each file start with the `locale` key.  
