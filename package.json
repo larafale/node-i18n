@@ -1,6 +1,6 @@
 {
   "name": "node-i18n",
-  "description": "i18n for node",
+  "description": "i18n for node with expressJS",
   "main": "./index",
   "author": "Larafale & silently",
   "version": "0.0.9",
