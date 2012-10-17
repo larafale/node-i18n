@@ -2,11 +2,13 @@
   "name": "node-i18n",
   "description": "i18n for node with expressJS",
   "main": "./index",
-  "author": "Larafale & silently",
+  "author": {
+    "name": "Larafale & silently"
+  },
   "version": "0.0.16",
   "repository": {
-      "type": "git",
-      "url": "http://github.com/larafale/node-i18n.git"
+    "type": "git",
+    "url": "http://github.com/larafale/node-i18n.git"
   },
   "dependencies": {
     "underscore": ">=1.3.3"
@@ -16,5 +18,11 @@
   },
   "scripts": {
     "test": "vows test/*.js --spec"
-  }
+  },
+  "readme": "node-i18n\n=========\n\ni18n for node with expressJS\n\n- key => value Style\n- Deep file structure\n- View helpers\n\n#### Start\n\n\n```\nvar i18n_options = {}\nvar i18n = require('node-i18n')(i18n_options)\n\napp.use(i18n.middleware) //call before app.use(app.router)\n```\n\n#### Options (default)\n\n```\n{\n    default : 'en'\n  , enabled : ['en']\n  ,\t'dir'   : './assets/private/i18n'\n  ,\t'helper_translate'\t: '__'\n  ,\t'helper_path'\t\t: '__p'\n  ,\t'helper_locale'\t\t: '__l'\n}\n```\n\n`dir` is where translation files are stored. Relative to your express application file.  \n`helper*` are the avaible function in Jade templates\n<br/>\n\n#### Express route\n\nlet's say you have a route `/products` where you want to implement i18n  \nBefore implementing i18n your route would have look like so :\n\n```\napp.get('/products', function(req, res){\n\tres.end()\n})\n```\nAfter\n\n```\napp.get(i18n.route('products'), function(req, res){\n\tres.end()\n})\n```\nNote that the argument that `i18n.route()` takes is a `RegExp`, and we ommitted the `/` before `products`  \n<br/>\nNow this route will match `/products` and `/en/products`  \n<br/>\nAs `en` is set to be the default, when making a request to `/en/products` you will be redirected to `/products`\n\n#### Translation files\nEvery translation file is JSON and must end with .json  \nYou can have as many files as you want for each locale. This let you seperate content.  \nFor example : `en.json` `header_en.json` `footer_en.json`  \n<br/>\nEach file start with the `locale` key.  \nYou can now write your definition going how deep as you like in objects.\n\n```\n{ \"en\": {\n\n    \"baseline\" : \"Welcome to my site\"\n\n  ,  \"header\": {\n      \"menu\": {\n\t       \"h1\" : \"Hello {{name}} !\"\n\t\t , \"h2\" : \"What's up\"\n\t  }\n  }\n  \n  , \"footer\": {\n      \"who\": \"Who are we ?\"\n  }\n  \n}}\n```\n\nTo make a dynamic definition, put the key of the object you are going to pass later on between double brackets `{{name}}`\n\n#### Jade template\n\n```\np= __('baseline')\np Current locale is #{__l}\n\ndiv.header\n   h1= __('header.menu.h1', { name: 'Batman' })\n   h2= __('header.menu.h2')\n   \ndiv.footer\n   a(href=\"#{__p('/contact')}\")= __('footer.who')\n```\n\n`__l` return current locale  \n`__p('/contact')` return given path prefixed with locale\n\n<br/><br/>\n## Tests\n\n\n`npm test`",
+  "_id": "node-i18n@0.0.16",
+  "dist": {
+    "shasum": "526317688083a909f788cc40558a9aa851d92a4e"
+  },
+  "_from": "node-i18n@0.0.16"
 }

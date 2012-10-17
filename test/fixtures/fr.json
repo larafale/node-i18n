@@ -4,6 +4,7 @@
 		"greetingTwoPeople": "Bonjour {{person1}} et {{person2}}",
 		"evening": {
 			"greeting": "Bonsoir"
-		}
+		},
+    "hooks" : "Click sur {{{link|moi}}}"
 	}
 }
