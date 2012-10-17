@@ -24,9 +24,9 @@ app.use(i18n.middleware) //call before app.use(app.router)
     default             : 'en'
   , enabled             : ['en']
   , dir                 : './assets/private/i18n'
-  , helper_translate'   : '__'
+  , helper_translate    : '__'
   , helper_path         : '__p'
-  , helper_locale'      : '__l'
+  , helper_locale       : '__l'
 }
 ```
 
